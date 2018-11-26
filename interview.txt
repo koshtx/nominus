@@ -1,0 +1,103 @@
+Interview Questions
+Java
+1.	What is a JavaBean and what are the standards for declaration? Getters and setters
+2.	What are the considerations if we declare a Java class both final and abstract? Not possible
+3.	What are the default modifiers found in a Java Interface? Public and abstract
+4.	Explain relationship known as Is-A and Has A.
+5.	In an inheritance schema, what can you conclude about the following scenario:
+a.	A method declared as public in base class and overridden method declared a private package in child class. – Compilation error
+class A{ public  void test(){}} class B extends A
+b.	A method declared as private package in base class and overridden method declared public  in child class.
+6.	Define the concepts about Stack and Heap
+•	Instance variables and objects live on the heap.
+•	Local variables live on the stack
+7.	How can you convert an Integer object to an in primitive type?. parseInt(String) method with parameter or using intValue()
+8.	How many types of exceptions exist in Java and provide an example of each one? Checked (IOException)and Unckecked (NullPonterException)
+9.	What’s the difference between using StringBuilder and StringBuffer (). StringBuilder is faster, methods are not synchronized.
+10.	What kind of considerations you must have when choosing between a List Interface and a Set Interface.
+11.	What are the three implementations for a List Interface – ArrayList, Vector and LinkedList
+12.	What’s the name of the method you need to implement when you use a Comparable Interface. compareTo
+13.	In which cases you need to override equals() and hashCode() methods? equals() method:To compare when two objects are meaningful equivalents. hashCode():  How the object is gonna be stored in a collection and how to retrieve it from same collection.
+14.	What is the difference between collection (lowercase c),  Collection (capital C) and Collections:
+•	collection (lowercase c), which represents any of the data structures in which objects are stored and iterated over.
+•	Collection (capital C), which is actually the java.util.Collection interface from which Set, List, and Queue extend. (That's right, extend, not implement. There are no direct implementations of Collection.)
+•	Collections (capital C and ends with s) is the java.util.Collections class that holds a pile of static utility methods for use with collections.
+15.	Explain the difference between creating a String object like String s = new String(“Hello”); and String s = “Hello”;  with new String compiler creates a new object in heap and with literal case, compiler looks for the string in String pool, if it’s already extist, it just assign an existent reference
+
+
+
+
+J2EE
+1.	Explain Servlet lifecycle.
+2.	When the destroy method is called in a Servlet? 
+•	All threads executing a service() method on this instance must have ended
+•	Destroy method is never called if init() method failed
+3.	What do the following components names WAR, EAR and JAR stand for?
+4.	What’s a WAR file and how it’s structured?
+5.	What are the HTTP methods that a servlet is able to process? GET, HEAD, POST, TRACE, PUT, DELETE, CONNECT
+6.	What is the default method used when no method is provided in form html tag? GET
+7.	What’s the difference when you use getRequest and getParameter methods in a Servlet.
+8.	What’s the Java annotation required to define a Servlet or a Filter? @WebServlet, @WebFilter
+9.	What’s a Listener related to a Java Web component and give an example of one of them.
+10.	What are the three directives available in JSP? include, taglib, page
+11.	What’s a JSP component, explain lifecycle
+12.	What are the four scripting elements available in JSP? Expressions, scriptlets, declarations, comments
+13.	What is an expression inside a JSP page? Use the result of evaluating  a piece of Java code directly in the page output. <%= new java.util.Date() %>
+14.	Mention the implicit objects available in a JSP page? application, session, request, response, page, config, out, exception,  pageContext,  
+15.	Explain the concept about Expression Language (EL). Replaces Java language syntax expressions, the result from an EL expression is sent to page output. Syntax: ${expression}
+16.	What’s a TLD file and how it’s used in a web component? Tag Library Descriptor
+Design Patterns
+1.	What is it? Explain one of them that you know.
+2.	How singleton Pattern is implemented?
+ORM
+1.	What’s ORM stand for?
+2.	What’s the advantage between using ORM Framework and JDBC?
+3.	What’s the purpose of the following Objects in Hibernate: Session, Query, Criteria and Transaction?
+JBoss / Websphere
+1.	What are the components available in WAR and EAR files.?
+a.	EAR = Servelets+JSPs+EJBs
+b.	WAR = Servelets+JSPs
+2.	What is the difference between an Application Server and a Web Server? 
+Application Servers hosts the java applications and Web Server is basically used for serving static HTML pages.
+3.	What’s the default port for administrative console for WebSphere and JBoss: WAS 9060, 8080/admin-console
+Struts
+1.	What is ActionServlet? ActionServlet is a simple servlet which is the backbone of all Struts applications. It is the main Controller component that handles client requests and determines which Action will process each received request. It serves as an Action factory – creating specific Action classes based on user’s request
+2.	What is the ActionForm? 
+ActionForm is javabean which represents the form inputs containing the request parameters from the View referencing the Action bean.
+3.	What are the important methods of ActionForm? The important methods of ActionForm are : validate() & reset().
+4.	What is ActionMapping? Action mapping contains all the deployment information for a particular Action bean. This class is to determine where the results of the Action will be sent once its processing is complete.
+5.	How is the Action Mapping specified ? We can specify the action mapping in the configuration file called struts-config.xml. Struts framework creates ActionMapping object from <ActionMapping> configuration element of struts-config.xml file 
+6.	
+Maven
+1.	What’s a pom.xml and what’s the content if such file?
+2.	Explain the concept or artifact Id
+3.	What’s maven build lifecycle? Prepare-resources, compile, package, install
+4.	What’s an Archetype? is a Maven plugin whose task is to create a project structure as per its template.
+Explain all you know about Methodology (Agile/Scrum)
+Web Services
+1.	How does a Web service Work?
+o	A web service enables communication among various applications by using open standards such as HTML, XML, WSDL, and SOAP. A web service takes the help of:
+?	XML to tag the data
+?	SOAP to transfer a message
+?	WSDL to describe the availability of service.
+2.	What WSDL stand’s for?
+3.	Define concept of web service. Is any piece of software that makes itself available over the internet and uses a standardized XML messaging system.
+REST
+REST is a set of principles. True
+Statelessness means not having a state at all? False
+The HTTP method that can be used to create a resource is? POST
+REST Provides a Standard Interface to perform CRUD operations. True
+Which of the following is a good candidate for using REST ? (Limited Bandwidth, Application Requires Caching, Application is eligible for Scalability)
+What in the object model become the resources? Nouns
+It is a good practice to use the HTTP POST method for an update operation. False
+How can we share a REST web service consumer the contract/contents of the XML request and response messages? Using XML schema
+Which part of JAX-RS should the developers focus on? API – Specification, Interfaces, Classes
+The JAX-RS annotation that can be used to bind a java method to a HTTP DELETE method is ? @DELETE
+The annotation that can be used to bind a URI to a java method is? @Path
+
+
+
+
+
+
+
